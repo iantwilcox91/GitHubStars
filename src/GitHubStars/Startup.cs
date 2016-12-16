@@ -53,11 +53,7 @@ namespace MrFixIt
             {
                 routes.MapRoute(
                     name: "default",
-<<<<<<< HEAD
                     template: "{controller=Home}/{action=Index}/{id?}");
-=======
-                    template: "{controller=Account}/{action=Index}/{id?}");
->>>>>>> Ian
             });
             app.Run(async (error) =>
             {
