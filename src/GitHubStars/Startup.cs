@@ -10,10 +10,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using GitHubStars.Models;
+//using GitHubStars.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-namespace MrFixIt
+namespace GitHubStars
 {
     public class Startup
     {
@@ -21,8 +21,8 @@ namespace MrFixIt
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json");
+                .SetBasePath(env.ContentRootPath);
+                //.AddJsonFile("appsettings.json");
             Configuration = builder.Build();
         }
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -48,12 +48,12 @@ namespace MrFixIt
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseIdentity();
+            //app.UseIdentity();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Account}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
             app.Run(async (error) =>
             {
