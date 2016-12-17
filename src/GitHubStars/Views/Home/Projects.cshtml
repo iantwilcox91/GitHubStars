@@ -1,6 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model IEnumerable<GitHubStars.Models.Project>
+
+
+
 <h1>Projects</h1>
+<ol>
+    @foreach (var Project in Model)
+    {
+        <li>name: @Html.DisplayFor(modelItem => Project.name)</li>
+        <li>stars: @Html.DisplayFor(modelItem => Project.stars)</li>
+    }
+</ol>
