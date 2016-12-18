@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using GitHubStars.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,7 +22,8 @@ namespace GitHubStars.Controlers
         }
         public IActionResult Projects()
         {
-            return View();
+            var bestProjects = Project.GetProjects();
+            return View(bestProjects);
         }
     }
 }
