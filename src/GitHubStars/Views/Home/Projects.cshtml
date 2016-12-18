@@ -7,6 +7,6 @@
     @foreach (var Project in Model)
     {
         <li>name: @Html.DisplayFor(modelItem => Project.name)</li>
-        <li>stars: @Html.DisplayFor(modelItem => Project.stars)</li>
+        <li>stars: @Html.DisplayFor(modelItem => Project.stargazers_count)</li>
     }
 </ol>
