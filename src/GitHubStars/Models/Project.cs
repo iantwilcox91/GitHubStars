@@ -31,9 +31,10 @@ namespace GitHubStars.Models
             }).Wait();
 
             JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(response.Content);
-            //Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'Newtonsoft.Json.Linq.JObject'. -- using JArray
+            //Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'Newtonsoft.Json.Linq.JObject'. -- using JArray. 
             var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse.ToString());
             return projectList;
+            //this seems to only returns 30 projects for the page. for getting the projects with the most stars im thinking maybe a foreach-loop passing in projectList and if stargazers_count is < 0 add that to a new array. use that array for the page model?
         }
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
         {
