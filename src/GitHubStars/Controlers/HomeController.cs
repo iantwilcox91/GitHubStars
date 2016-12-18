@@ -22,8 +22,8 @@ namespace GitHubStars.Controlers
         }
         public IActionResult Projects()
         {
-            Dictionary<string, string> model = Project.GetProjects();
-            return View(model);
+            var bestProjects = Project.GetProjects();
+            return View(bestProjects);
         }
     }
 }
