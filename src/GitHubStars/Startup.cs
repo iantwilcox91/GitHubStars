@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-//using GitHubStars.Models;
+using GitHubStars.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace GitHubStars

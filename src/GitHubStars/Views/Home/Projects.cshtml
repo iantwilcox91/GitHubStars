@@ -1,12 +1,11 @@
 ﻿@model IEnumerable<GitHubStars.Models.Project>
 
 
-
 <h1>Projects</h1>
 <ol>
-    @foreach (var Project in Model)
+    @foreach (var Project in Model.Take(3))
     {
-        <li>name: @Html.DisplayFor(modelItem => Project.name) ~ stars: @Html.DisplayFor(modelItem => Project.stargazers_count)</li>
+        <li>name: @Html.DisplayFor(modelItem => Project.Name) ~ stars: @Html.DisplayFor(modelItem => Project.Stargazers_count)</li>
         <br />
     }
 </ol>
